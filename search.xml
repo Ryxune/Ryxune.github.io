@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Hexo &amp; GitHub免费搭建自己的博客</title>
+      <link href="/2023/04/26/note/"/>
+      <url>/2023/04/26/note/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前置环境准备"><a href="#前置环境准备" class="headerlink" title="前置环境准备"></a>前置环境准备</h3><ul><li><a href="https://nodejs.org/en">Node</a></li><li><a href="https://git-scm.com/">Git</a></li></ul><h3 id="Hexo搭建博客"><a href="#Hexo搭建博客" class="headerlink" title="Hexo搭建博客"></a><a href="https://hexo.io/zh-cn/">Hexo</a>搭建博客</h3><ol><li><p><code>npm i -g hexo-cli</code> 安装Hexo</p></li><li><p><code>hexo -v</code> 检查是否安装成功</p></li><li><p>新建GitHub仓库,仓库的格式必须为：<code>&lt;用户名&gt;.github.io</code></p></li><li><p>连接GitHub</p><ol><li><p>生成ssh公钥,路径为 <code>C:\Users\用户名\.ssh\id_rsa.pub</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure></li><li><p>将 SSH KEY 配置到 GitHub</p><blockquote><ol><li><p>进入github，点击右上角头像 选择settings</p></li><li><p>进入设置页后选择 SSH and GPG keys</p><blockquote><p>注意: 要是有【Key type】的选择项 ，选择默认Authentication Key 即可。</p></blockquote></li></ol></blockquote></li><li><p><code>ssh -T git@github.com</code>检查配置是否成功</p><blockquote><p>如下提示表示成功<br>Hi Ryxune! You’ve successfully authenticated, but GitHub does not provide shell access.</p></blockquote></li></ol></li><li><p><code>hexo init blog(项目名)</code> 初始化Hexo项目,  <code>cd blog</code>切换到项目目录.</p></li><li><p><code>npm i</code> 安装依赖</p></li><li><p><code>hexo s</code> 或<code>hexo serve</code>开启本地服务, 即可在浏览器中访问 <code>http://localhost:4000/</code></p></li><li><p><code>git i hexo-deployer-git</code>安装部署插件</p></li><li><p>在<code>_config.yml</code>文件中配置仓库路径和分支,注意查看分支是<code>master</code>还是<code>main</code></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://xxx/xxx.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li><li><p><code>hexo clean</code> 清除缓存(删除之前生成的文件，若未生成过静态文件，可忽略此命令。)</p></li><li><p><code>hexo g</code> 再次生成静态文件</p></li><li><p><code>hexo d</code> 或<code>hexo deploy</code>部署到GitHub </p></li><li><p><code>用户名.gitee.io</code>访问</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/04/25/hello-world/"/>
       <url>/2023/04/25/hello-world/</url>
